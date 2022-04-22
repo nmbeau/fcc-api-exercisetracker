@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 });
 
+// *** BEGIN MY CODE ***
 // build models
 // setup - connect via URI
 mongoose.connect(process.env['MONGO_URI'], { useNewUrlParser: true, useUnifiedTopology: true });
@@ -209,6 +210,7 @@ app
   .route('/api/users/:_id/logs')
   .get(logs)
 
+// *** END MY CODE ***
 
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
